@@ -1,11 +1,18 @@
 package kodlamaio.hrms.entities.concretes;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -27,8 +34,14 @@ public class JobTitle {
 	@Column(name="id")// burada sen veri tabanında kolonsun ve buna eşitsin dedik
 	private int id;
 	
+	@NotBlank
+	@NotNull
 	@Column(name="title")// burada sen veri tabanında kolonsun ve buna eşitsin dedik
 	private String title;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy = "jobTitle")
+	private List<WorkplaceCandidate>  WorkplaceCandidates ;
 	
 
 }

@@ -5,6 +5,7 @@ package kodlamaio.hrms.business.concretes;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import kodlamaio.hrms.business.abstacts.EmployeeService;
 import kodlamaio.hrms.core.utilities.Result;
@@ -14,6 +15,7 @@ import kodlamaio.hrms.core.utilities.results.SuccesResult;
 import kodlamaio.hrms.dataAccess.abstacts.EmployeeDao;
 import kodlamaio.hrms.entities.concretes.Employee;
 
+@Service
 public class EmployeeManager implements EmployeeService {
 
 	private EmployeeDao employeeDao;
